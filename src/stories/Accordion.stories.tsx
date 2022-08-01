@@ -112,5 +112,6 @@ export default {
   argTypes: {
     backgroundColor: { control: "color" },
     color: { control: "color" },
+    padding: { control: { type: "number" } },
   },
 } as ComponentMeta<typeof Default>;
