@@ -59,3 +59,20 @@ test("controlled can be rendered open", () => {
   expect(AccordionElement).toBeInTheDocument();
   expect(Item).toBeVisible();
 });
+test("controlled can be toggled", async () => {
+  let expand = false;
+  render(
+    <Accordion expand={expand}>
+      <AccordionButton>button</AccordionButton>
+      <AccordionItem>item</AccordionItem>
+    </Accordion>
+  );
+  const AccordionElement = screen.getByText(/button/i);
+  const Item = screen.queryByText(/item/i);
+  expect(AccordionElement).toBeInTheDocument();
+  expect(Item).not.toBeVisible();
+  expand = true;
+  await new Promise((r) => setTimeout(r, 1));
+  expect(AccordionElement).toBeInTheDocument();
+  expect(Item).not.toBeVisible();
+});
