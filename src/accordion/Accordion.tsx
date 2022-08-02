@@ -4,15 +4,22 @@ import Box, { TBoxProps } from "../Box";
 const initialState = {
   isOpen: false,
   toggleOpen: () => {},
+  delay: 0.35,
 };
 export const AccordionContext = createContext(initialState);
 
 type Props = TBoxProps & {
   children: React.ReactNode;
   expand?: boolean;
+  delay?: number;
 };
 
-export default function Accordion({ children, expand, ...props }: Props) {
+export default function Accordion({
+  children,
+  expand,
+  delay,
+  ...props
+}: Props) {
   const [isOpen, setIsOpen] = useState<boolean>(expand || false);
   const toggleOpen = useCallback(() => {
     if (typeof expand === "undefined") {
@@ -26,6 +33,7 @@ export default function Accordion({ children, expand, ...props }: Props) {
       value={{
         isOpen: typeof expand === "undefined" ? isOpen : expand,
         toggleOpen,
+        delay: delay ? delay : 0.35,
       }}
     >
       <Box {...props}>{children}</Box>

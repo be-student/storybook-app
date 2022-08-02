@@ -113,5 +113,11 @@ export default {
     backgroundColor: { control: "color" },
     color: { control: "color" },
     padding: { control: { type: "number" } },
+    delay: {
+      label: {
+        describe: "only works for custom All",
+      },
+      control: { type: "number" },
+    },
   },
 } as ComponentMeta<typeof Default>;

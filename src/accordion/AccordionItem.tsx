@@ -6,7 +6,7 @@ type Props = TBoxProps & {
   children: React.ReactNode;
 };
 export default function AccordionItem({ children, ...props }: Props) {
-  const { isOpen } = useContext(AccordionContext);
+  const { isOpen, delay } = useContext(AccordionContext);
   const parentRef = useRef<HTMLDivElement>(null);
   const childRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -14,8 +14,10 @@ export default function AccordionItem({ children, ...props }: Props) {
       return;
     }
     if (isOpen) {
+      parentRef.current.style.visibility = "visible";
       parentRef.current.style.height = `${childRef.current.clientHeight}px`;
     } else {
+      parentRef.current.style.visibility = "hidden";
       parentRef.current.style.height = "0";
     }
   }, [isOpen]);
@@ -23,7 +25,9 @@ export default function AccordionItem({ children, ...props }: Props) {
     <Box
       overflow="hidden"
       boxSizing="border-box"
-      style={{ transition: "height 0.35s ease" }}
+      style={{
+        transition: `height ${delay}s ease,visibility ${delay}s ease`,
+      }}
       ref={parentRef}
     >
       <Box ref={childRef} {...props}>
