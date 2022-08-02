@@ -1,7 +1,7 @@
 import { ComponentMeta } from "@storybook/react";
 import Accordion from "../accordion/Accordion";
 import AccordionButton from "../accordion/AccordionButton";
-import AccordionItem from "../accordion/AccordionContent";
+import AccordionContent from "../accordion/AccordionContent";
 import Box from "../Box";
 
 export const Default = () => {
@@ -17,24 +17,24 @@ export const Default = () => {
           button
         </Box>
       </AccordionButton>
-      <AccordionItem>
+      <AccordionContent>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio
         laudantium, fugiat modi officiis dolores qui? Ipsum voluptates vel
         quisquam, rem laboriosam illum obcaecati excepturi magnam aspernatur
         dolor doloremque quod iusto.
-      </AccordionItem>
+      </AccordionContent>
     </Accordion>
   );
 };
 export const Downside = () => {
   return (
     <Accordion width="300px">
-      <AccordionItem>
+      <AccordionContent>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio
         laudantium, fugiat modi officiis dolores qui? Ipsum voluptates vel
         quisquam, rem laboriosam illum obcaecati excepturi magnam aspernatur
         dolor doloremque quod iusto.
-      </AccordionItem>
+      </AccordionContent>
       <AccordionButton>
         <Box
           bg="rgba(0,0,0,0.3)"
@@ -48,7 +48,7 @@ export const Downside = () => {
     </Accordion>
   );
 };
-export const CustomAll = ({ ...props }: any) => {
+export const CustomAccordion = ({ ...props }: any) => {
   return (
     <Accordion width="300px" {...props}>
       <AccordionButton>
@@ -61,17 +61,17 @@ export const CustomAll = ({ ...props }: any) => {
           button
         </Box>
       </AccordionButton>
-      <AccordionItem>
+      <AccordionContent>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio
         laudantium, fugiat modi officiis dolores qui? Ipsum voluptates vel
         quisquam, rem laboriosam illum obcaecati excepturi magnam aspernatur
         dolor doloremque quod iusto.
-      </AccordionItem>
+      </AccordionContent>
     </Accordion>
   );
 };
 
-export const CustomTitle = ({ ...props }: any) => {
+export const CustomAccordionButton = ({ ...props }: any) => {
   return (
     <Accordion width="300px">
       <AccordionButton {...props}>
@@ -79,16 +79,16 @@ export const CustomTitle = ({ ...props }: any) => {
           button
         </Box>
       </AccordionButton>
-      <AccordionItem>
+      <AccordionContent>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio
         laudantium, fugiat modi officiis dolores qui? Ipsum voluptates vel
         quisquam, rem laboriosam illum obcaecati excepturi magnam aspernatur
         dolor doloremque quod iusto.
-      </AccordionItem>
+      </AccordionContent>
     </Accordion>
   );
 };
-export const CustomContent = ({ ...props }: any) => {
+export const CustomAccordionContent = ({ ...props }: any) => {
   return (
     <Accordion width="300px">
       <AccordionButton>
@@ -96,12 +96,12 @@ export const CustomContent = ({ ...props }: any) => {
           button
         </Box>
       </AccordionButton>
-      <AccordionItem {...props}>
+      <AccordionContent {...props}>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio
         laudantium, fugiat modi officiis dolores qui? Ipsum voluptates vel
         quisquam, rem laboriosam illum obcaecati excepturi magnam aspernatur
         dolor doloremque quod iusto.
-      </AccordionItem>
+      </AccordionContent>
     </Accordion>
   );
 };
