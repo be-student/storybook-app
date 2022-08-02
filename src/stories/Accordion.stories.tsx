@@ -1,7 +1,7 @@
 import { ComponentMeta } from "@storybook/react";
 import Accordion from "../accordion/Accordion";
 import AccordionButton from "../accordion/AccordionButton";
-import AccordionItem from "../accordion/AccordionItem";
+import AccordionItem from "../accordion/AccordionContent";
 import Box from "../Box";
 
 export const Default = () => {

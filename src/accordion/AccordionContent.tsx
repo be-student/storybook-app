@@ -5,7 +5,7 @@ import { AccordionContext } from "./Accordion";
 type Props = TBoxProps & {
   children: React.ReactNode;
 };
-export default function AccordionItem({ children, ...props }: Props) {
+export default function AccordionContent({ children, ...props }: Props) {
   const { isOpen, delay } = useContext(AccordionContext);
   const parentRef = useRef<HTMLDivElement>(null);
   const childRef = useRef<HTMLDivElement>(null);

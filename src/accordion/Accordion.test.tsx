@@ -2,13 +2,13 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Accordion from "./Accordion";
 import AccordionButton from "./AccordionButton";
-import AccordionItem from "./AccordionItem";
+import AccordionContent from "./AccordionContent";
 
 test("un-controlled can be rendered", () => {
   render(
     <Accordion>
       <AccordionButton>button</AccordionButton>
-      <AccordionItem>item</AccordionItem>
+      <AccordionContent>item</AccordionContent>
     </Accordion>
   );
   const Button = screen.getByText(/button/i);
@@ -20,7 +20,7 @@ test("un-controlled toggles the accordion on click", async () => {
   render(
     <Accordion>
       <AccordionButton>button</AccordionButton>
-      <AccordionItem>item</AccordionItem>
+      <AccordionContent>item</AccordionContent>
     </Accordion>
   );
   const Button = screen.getByText(/button/i);
@@ -39,7 +39,7 @@ test("controlled can be rendered close", () => {
   render(
     <Accordion expand={false}>
       <AccordionButton>button</AccordionButton>
-      <AccordionItem>item</AccordionItem>
+      <AccordionContent>item</AccordionContent>
     </Accordion>
   );
   const AccordionElement = screen.getByText(/button/i);
@@ -51,7 +51,7 @@ test("controlled can be rendered open", () => {
   render(
     <Accordion expand={true}>
       <AccordionButton>button</AccordionButton>
-      <AccordionItem>item</AccordionItem>
+      <AccordionContent>item</AccordionContent>
     </Accordion>
   );
   const AccordionElement = screen.getByText(/button/i);
@@ -64,7 +64,7 @@ test("controlled can be toggled", async () => {
   render(
     <Accordion expand={expand}>
       <AccordionButton>button</AccordionButton>
-      <AccordionItem>item</AccordionItem>
+      <AccordionContent>item</AccordionContent>
     </Accordion>
   );
   const AccordionElement = screen.getByText(/button/i);

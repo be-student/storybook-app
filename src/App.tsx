@@ -1,6 +1,6 @@
 import "./App.css";
 import Accordion from "./accordion/Accordion";
-import AccordionItem from "./accordion/AccordionItem";
+import AccordionContent from "./accordion/AccordionContent";
 import AccordionButton from "./accordion/AccordionButton";
 import Box from "./Box";
 import { useState } from "react";
@@ -13,12 +13,12 @@ function App() {
   return (
     <Box p="2rem">
       <Accordion width="300px">
-        <AccordionItem>
+        <AccordionContent>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio
           laudantium, fugiat modi officiis dolores qui? Ipsum voluptates vel
           quisquam, rem laboriosam illum obcaecati excepturi magnam aspernatur
           dolor doloremque quod iusto.
-        </AccordionItem>
+        </AccordionContent>
         <AccordionButton>
           <Box
             bg="rgba(0,0,0,0.3)"
@@ -43,14 +43,14 @@ function App() {
           </Box>
         </AccordionButton>
 
-        <AccordionItem>
+        <AccordionContent>
           <Box width="100%">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio
             laudantium, fugiat modi officiis dolores qui? Ipsum voluptates vel
             quisquam, rem laboriosam illum obcaecati excepturi magnam aspernatur
             dolor doloremque quod iusto.
           </Box>
-        </AccordionItem>
+        </AccordionContent>
       </Accordion>
       <Accordion width="300px" expand={isOpen} onClick={onClick}>
         <AccordionButton width="100%">
@@ -64,14 +64,14 @@ function App() {
           </Box>
         </AccordionButton>
 
-        <AccordionItem>
+        <AccordionContent>
           <Box>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio
             laudantium, fugiat modi officiis dolores qui? Ipsum voluptates vel
             quisquam, rem laboriosam illum obcaecati excepturi magnam aspernatur
             dolor doloremque quod iusto.
           </Box>
-        </AccordionItem>
+        </AccordionContent>
       </Accordion>
     </Box>
   );
